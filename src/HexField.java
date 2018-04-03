@@ -6,13 +6,22 @@ public class HexField {
     private boolean isOnArena;
     //Adresseholdere til nabo-hexer. Bliver sat af initializeArena()
     private HexField upperRight, right, lowerRight, lowerLeft, left, upperLeft;
-    //Hexfelternes mulige indhold: Gladiatorer, våben;
-    //Gladiator gladiator;
-    //Weapon weapon;
+    //Hexfelternes mulige indhold:
+    // Beings: Gladiatorer og dyr
+    // Thing Udlagte fælder(net), tabte våben, afhukkede lemmer(?), alt som en gladiator kan samle op og putte i sit inventory;
+    Being being;
+    Thing thing;
 
     public HexField(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public boolean isHexEmpty(){
+        if(being==null && thing==null)
+            return false;
+
+        return true;
     }
 
     public boolean getIsOnArena() {

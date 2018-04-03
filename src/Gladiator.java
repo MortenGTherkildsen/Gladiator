@@ -1,4 +1,4 @@
-public class Gladiator {
+public class Gladiator extends Being{
 
 
 }

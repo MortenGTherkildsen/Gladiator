@@ -29,7 +29,7 @@ public class Arena {
         return answer;
     }
 
-    public void addToArena(HexField hexField) {
+    public void addHexToArena(HexField hexField) {
         if (hexField.getIsOnArena() == false) {
             hexArray.add(hexField);
             hexField.setIsOnArena(true);
@@ -42,7 +42,7 @@ public class Arena {
         for (int y = (1 - size); y < size; y++)
             for (int x = (1 - size); x < size; x++)
                 if (this.isXYonArena(x, y) == false) {
-                    addToArena(new HexField(x, y));
+                    addHexToArena(new HexField(x, y));
                     count++;
                     System.out.println("(" + x + "," + y + ") added to arena");
                 }
@@ -89,4 +89,6 @@ public class Arena {
         }
 
     }
+
+
 }
